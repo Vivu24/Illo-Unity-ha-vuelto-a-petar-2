@@ -879,6 +879,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: sajwa
       objectReference: {fileID: 0}
+    - target: {fileID: 3346744340266656872, guid: e7f14c984c08e924cb13a80ca5460233,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346744340266656872, guid: e7f14c984c08e924cb13a80ca5460233,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pared
+      objectReference: {fileID: 0}
     - target: {fileID: 4145497297631986025, guid: e7f14c984c08e924cb13a80ca5460233,
         type: 3}
       propertyPath: m_Layer
@@ -1086,7 +1096,7 @@ GameObject:
   - component: {fileID: 1784686214}
   m_Layer: 3
   m_Name: Entrada
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1242,7 +1252,7 @@ GameObject:
   - component: {fileID: 2014439084}
   m_Layer: 3
   m_Name: Entrada
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1448,8 +1458,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 0
-  _force: 20
+    m_Bits: 8
+  targetPosition: {x: 1.5, y: 2.5, z: -6.7}
+  _force: 125
 --- !u!1 &2103695531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4145497297631986025, guid: e7f14c984c08e924cb13a80ca5460233,

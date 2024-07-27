@@ -13,7 +13,7 @@ public class Cursor : MonoBehaviour
     private Transform _tr;
     private Vector3 _mousePos;
 
-    private Vector3 targetPosition;
+    [SerializeField] private Vector3 targetPosition;
     private GameObject _can;
     private GameObject lataEnMano;
     private bool isMoving = false;
@@ -61,7 +61,6 @@ public class Cursor : MonoBehaviour
 
         if (isMoving)
         {
-            Vector3 targetPosition = new Vector3(2, 0.5f, -3);
             _can.transform.position = Vector3.Lerp(_can.transform.position, targetPosition, Time.deltaTime * 5.0f);
             if (Vector3.Distance(_can.transform.position, targetPosition) < 0.01f)
             {
@@ -84,6 +83,7 @@ public class Cursor : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezePosition;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
+        lataEnMano = _can;
         isMoving = true;
     }
 
