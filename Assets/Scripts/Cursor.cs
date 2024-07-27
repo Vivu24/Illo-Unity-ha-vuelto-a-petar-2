@@ -25,6 +25,8 @@ public class Cursor : MonoBehaviour
 
     [SerializeField] private float _force;
 
+    private int _pets = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class Cursor : MonoBehaviour
             }
             else if (obj.GetComponent<Orbit>() != null)
             {
+                Debug.Log("mosca");
                 Destroy(obj.transform.parent.gameObject);
             }
             else if (obj.tag == "Lata" && !isMoving && !tieneLata)
@@ -60,6 +63,16 @@ public class Cursor : MonoBehaviour
             else if ((obj.tag == "Pared" || obj.tag == "Lata") && tieneLata)
             {
                 throwCan(_hit.point);
+            }
+            else if (obj.GetComponent<Gatete>() != null)
+            {
+                _pets++;
+
+                if (_pets == 4)
+                {
+                    obj.GetComponent<Gatete>().FlipAndLeave();
+                    _pets = 0;
+                }
             }
         }
 

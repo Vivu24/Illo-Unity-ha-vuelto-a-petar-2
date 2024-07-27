@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 6170913940615473533}
   - component: {fileID: 5424733177427307757}
   - component: {fileID: 3269373750982885707}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mj_mosca_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

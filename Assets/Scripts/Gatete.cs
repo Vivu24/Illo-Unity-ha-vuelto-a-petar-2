@@ -15,6 +15,8 @@ public class Gatete : MonoBehaviour
 
     private int[] _lado = {1, -1};
 
+    private float _timeCount = 0.0f;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 6)
@@ -44,5 +46,15 @@ public class Gatete : MonoBehaviour
             }
             _timer -= Time.deltaTime;
         }
+    }
+
+    public void FlipAndLeave()
+    {
+        Quaternion dest = new Quaternion(transform.rotation.x,
+                                        transform.rotation.y + 180,
+                                        transform.rotation.z,
+                                        transform.rotation.w);
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, dest, 1f);
     }
 }
