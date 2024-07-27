@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    private int score = 123;
+    private int score = 0;
     [SerializeField]
     private TMP_InputField inputName;
 
@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        //GameManager.getTotalScore();
+        score = GameManager.Instance.Score;
     }
 
     // Update is called once per frame
