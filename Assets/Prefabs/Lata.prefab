@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5747659202553710289}
   - component: {fileID: 8748937549321867942}
   - component: {fileID: 290667451619254859}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lata
-  m_TagString: Untagged
+  m_TagString: Lata
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 4017934197551639228}
   - component: {fileID: 2113620375864853303}
   - component: {fileID: 3322784875820226568}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 7417348424715056307}
   - component: {fileID: 5174285350567317348}
   - component: {fileID: 314905210737208458}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 1243912017475700310}
   - component: {fileID: 1214234775327236256}
   - component: {fileID: 4764081290262355090}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9041589209829022048}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LOD_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3419461676139264607}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LOD_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8510659967610043131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LOD_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
