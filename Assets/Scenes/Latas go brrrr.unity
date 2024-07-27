@@ -185,6 +185,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7063676262819412282, guid: 6bc3cac3397b7824f9279734db88a59c,
+        type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -219,8 +224,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8630055b6397ec74da9e98c798325b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventManager: {fileID: 0}
   _canCadency: 3
   _loadingBeltVelocity: 100
+  _eventMaxCooldown: 0
+  _eventTimer: 0
+  _eventLimitCooldown: 1
+  _beltMaxCooldown: 0
+  _beltTimer: 0
+  _totalEventCounter: 0
+  _maxNumberOfEvents: 0
   _lifes: 3
 --- !u!4 &52692361
 Transform:

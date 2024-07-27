@@ -9,6 +9,7 @@ public class MoscaCojonera : MonoBehaviour
     private Transform _tr;
     private float _timer = 1;
     private Vector3 _dir;
+    [SerializeField] private float _speed;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class MoscaCojonera : MonoBehaviour
             _dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             _timer = 3;
         }
-        _tr.localPosition += _dir * Time.deltaTime;
+        _tr.localPosition += _dir * Time.deltaTime * _speed;
         _timer -= Time.deltaTime;
     }
 }
