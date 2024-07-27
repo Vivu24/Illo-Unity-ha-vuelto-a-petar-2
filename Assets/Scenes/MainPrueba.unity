@@ -595,7 +595,8 @@ PrefabInstance:
       value: Pared
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -4782606982467273396, guid: e7f14c984c08e924cb13a80ca5460233, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -6809857824317143141, guid: e7f14c984c08e924cb13a80ca5460233,
         type: 3}
