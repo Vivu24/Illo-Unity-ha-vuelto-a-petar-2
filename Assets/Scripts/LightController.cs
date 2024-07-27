@@ -14,15 +14,8 @@ public class LightController : MonoBehaviour
         _light.intensity = 1;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void TurnOff()
     {
         _light.intensity = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

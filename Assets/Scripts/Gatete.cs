@@ -13,7 +13,7 @@ public class Gatete : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             Debug.Log("ostia");
-            // Play animation
+            // TODO: Play animation
             other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(0, 0, _force * _lado[Random.Range(0, 2)]);
         }
     }
