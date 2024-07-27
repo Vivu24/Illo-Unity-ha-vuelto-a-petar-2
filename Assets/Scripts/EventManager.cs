@@ -18,10 +18,13 @@ public class EventManager : MonoBehaviour
     private Vector3 p2pos;
     private Vector3 p3pos;
 
+    [SerializeField] private Transform _flyTr;
+
+
 
     public void ChangeEvent(int n)
     {
-        numOfEvent = 3;
+        numOfEvent = 1;
         Debug.Log("EVENTO");
         switch (numOfEvent)
         {
@@ -43,7 +46,7 @@ public class EventManager : MonoBehaviour
 
     private void MoscaEvent()
     {
-
+        Instantiate(_mosca, _flyTr);
     }
 
     private void GatitoEvent()

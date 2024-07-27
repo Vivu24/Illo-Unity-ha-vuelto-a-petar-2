@@ -15,7 +15,7 @@ public class MoscaCojonera : MonoBehaviour
     void Start()
     {
         _tr = transform;
-        _dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+        _dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class MoscaCojonera : MonoBehaviour
     {
         if(_timer <= 0)
         {
-            _dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+            _dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             _timer = 3;
         }
         _tr.localPosition += _dir * Time.deltaTime * _speed;

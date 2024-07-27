@@ -62,6 +62,11 @@ public class GameManager : MonoBehaviour
     private int _score = 0;
     public int Score { get { return _score; } }
 
+    // FLY COUNTER //
+    [SerializeField]
+    private int _flies;
+    public int Flies { get { return _flies; } }
+
 
     #endregion
 
