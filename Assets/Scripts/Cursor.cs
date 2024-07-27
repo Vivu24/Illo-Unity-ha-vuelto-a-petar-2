@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -11,6 +12,14 @@ public class Cursor : MonoBehaviour
     [SerializeField] private LayerMask _layer;
     private Transform _tr;
     private Vector3 _mousePos;
+
+    private Vector3 targetPosition;
+    private GameObject _can;
+    private GameObject lataEnMano;
+    private bool isMoving = false;
+    private bool tieneLata = false;
+
+    [SerializeField] private float _force;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +45,59 @@ public class Cursor : MonoBehaviour
             {
                 obj.GetComponent<LightController>().TurnOn();
             }
-            else if (obj.transform.parent.GetComponent<MoscaCojonera>() != null)
+            else if (obj.GetComponent<Orbit>() != null)
             {
                 Destroy(obj.transform.parent.gameObject);
             }
+            else if (obj.tag == "Lata" && !isMoving && !tieneLata)
+            {
+                takeCan(obj);
+            }
+            else if ((obj.tag == "Pared" || obj.tag == "Lata") && tieneLata)
+            {
+                throwCan(_hit.point);
+            }
         }
+
+        if (isMoving)
+        {
+            Vector3 targetPosition = new Vector3(2, 0.5f, -3);
+            _can.transform.position = Vector3.Lerp(_can.transform.position, targetPosition, Time.deltaTime * 5.0f);
+            if (Vector3.Distance(_can.transform.position, targetPosition) < 0.01f)
+            {
+                _can.transform.position = targetPosition;
+                isMoving = false;
+                tieneLata = true;
+                lataEnMano = _can;
+            }
+        }
+
+        Debug.Log("tengo lata: " + tieneLata);
+    }
+
+    private void takeCan(GameObject can)
+    {
+        _can = can;
+
+        Rigidbody rb = _can.GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.constraints = RigidbodyConstraints.FreezePosition;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+        isMoving = true;
+    }
+
+    private void throwCan(Vector3 target)
+    {
+        Debug.Log("lanzo");
+        //devuelvo fisicas a la lata y la lanzou
+        Rigidbody rb = lataEnMano.GetComponent<Rigidbody>();
+        rb.useGravity = true;
+        rb.constraints = RigidbodyConstraints.None;
+
+        //aplico fuerza a la lata, en la direccion donde ha colisionado el rayo
+        rb.AddForce((target - lataEnMano.transform.position).normalized * _force, ForceMode.Impulse);
+
+        tieneLata = false;
     }
 }
