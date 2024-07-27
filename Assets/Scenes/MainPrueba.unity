@@ -205,6 +205,8 @@ MonoBehaviour:
   _loadingBeltVelocity: 0
   _eventMaxCooldown: 3
   _eventTimer: 0
+  _eventLimitCooldown: 1
+  _totalEventCounter: 0
   _lifes: 3
 --- !u!4 &269601291
 Transform:

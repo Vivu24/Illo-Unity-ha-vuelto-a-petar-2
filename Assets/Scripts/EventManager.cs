@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EventManager : MonoBehaviour
 
@@ -13,8 +14,9 @@ public class EventManager : MonoBehaviour
     [SerializeField] private GameObject _luz;
 
 
-    public void ChangeEvent()
+    public void ChangeEvent(int n)
     {
+        numOfEvent = n;
         Debug.Log("EVENTO");
         switch (numOfEvent)
         {

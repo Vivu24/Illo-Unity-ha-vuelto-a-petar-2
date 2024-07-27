@@ -32,6 +32,13 @@ public class GameManager : MonoBehaviour
     private float _eventMaxCooldown;
     [SerializeField]
     private float _eventTimer = 0;
+    [SerializeField]
+    private float _eventLimitCooldown = 1;
+
+    [SerializeField]
+    private int _totalEventCounter = 0;
+    [SerializeField]
+    private int _maxNumberOfEvents;
 
     public int _lifes = 3;
     public int Lifes { get { return _lifes; } }
@@ -71,11 +78,22 @@ public class GameManager : MonoBehaviour
         Debug.Log(_eventTimer);
         if (_eventTimer > _eventMaxCooldown)
         {
+            CalculateEventTimer();
             _eventTimer = 0;
-            _eventManager.ChangeEvent();
+            _eventManager.ChangeEvent(UnityEngine.Random.Range(1, _maxNumberOfEvents + 1));
+            _totalEventCounter++;
         }
 
     }
+
+    public void CalculateEventTimer()
+    {
+        if (_eventMaxCooldown > _eventLimitCooldown)
+        {
+            _eventMaxCooldown -= 0.25f;
+        }
+    }
+
     #endregion
 
     // Start is called before the first frame update
