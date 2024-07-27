@@ -14,8 +14,8 @@ public class EventoJefe2 : MonoBehaviour
 
     private Vector3 posicionInicial;
     private Vector3 posicionObjetivo;
-    private bool volviendo = false;
-    private float tiempo = 0f;
+    public bool volviendo = false;
+    public float tiempo = 0f;
     private float contadorEspera = 0f;
 
     void Start()
@@ -64,7 +64,9 @@ public class EventoJefe2 : MonoBehaviour
             if (transform.position == posicionInicial)
             {
 
-                enabled = false;
+                gameObject.SetActive(false);
+
+
             }
         }
     }
