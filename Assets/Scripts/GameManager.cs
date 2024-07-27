@@ -58,8 +58,12 @@ public class GameManager : MonoBehaviour
     public int _lifes = 3;
     public int Lifes { get { return _lifes; } }
 
-    #endregion
 
+    private int _score = 0;
+    public int Score { get { return _score; } }
+
+
+    #endregion
 
 
     private void Awake()
@@ -133,6 +137,11 @@ public class GameManager : MonoBehaviour
             _beltTimer = 0;
             _loadingBeltVelocity += 0.5f;
         }
+    }
+
+    public void AddPoints(int n)
+    {
+        _score += n;
     }
 
     #endregion

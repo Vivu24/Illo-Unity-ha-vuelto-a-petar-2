@@ -13,8 +13,8 @@ public class EventoJefe : MonoBehaviour
 
     private Vector3 posicionInicial;
     private Vector3 posicionObjetivo;
-    private bool volviendo = false;
-    private float tiempo = 0f;
+    public bool volviendo = false;
+    public float tiempo = 0f;
     private float contadorEspera = 0f;
 
     void Start()
@@ -63,8 +63,13 @@ public class EventoJefe : MonoBehaviour
 
             if (transform.position == posicionInicial)
             {
-              
-                enabled = false;
+             
+                gameObject.SetActive(false);
+                //enabled = false;
+                //Destroy(gameObject);
+               
+               
+               
             }
         }
     }
@@ -74,25 +79,4 @@ public class EventoJefe : MonoBehaviour
        
     }
 
-    private void RndInitialPoint()
-    {
-        //p1pos = punto1.transform.position;
-        //p2pos = punto2.transform.position;
-        //p3pos = punto3.transform.position;
-
-        //int rnd = Random.Range(0, 3);
-        //if(rnd == 0)
-        //{
-        //    posicionInicial = p1pos;
-
-        //    posicionObjetivo = posicionInicial + Vector3.right * distancia;
-        //}
-        //else if(rnd == 1)
-        //{
-        //    posicionInicial = p2pos;
-
-        //    posicionObjetivo = posicionInicial + Vector3.left * distancia;
-        //}
-        
-    }
 }
