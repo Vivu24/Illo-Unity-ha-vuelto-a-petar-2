@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e4808c19019a336439aadb921ba73057, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -117,22 +117,22 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimStep: 0.185
-    - _RimStepSmooth: 0.672
-    - _ShadowStep: 0.5
-    - _ShadowStepSmooth: 0.04
+    - _RimStep: 0.436
+    - _RimStepSmooth: 0.763
+    - _ShadowStep: 0.668
+    - _ShadowStepSmooth: 0.113
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularStep: 0
-    - _SpecularStepSmooth: 0
+    - _SpecularStep: 0.334
+    - _SpecularStepSmooth: 0.555
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.6377357, g: 0.39352903, b: 0.25389096, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
