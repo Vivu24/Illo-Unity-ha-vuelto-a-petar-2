@@ -122,6 +122,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &35612525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7028461072418719135, guid: e7f14c984c08e924cb13a80ca5460233,
+    type: 3}
+  m_PrefabInstance: {fileID: 1442508020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &35612529
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35612525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5205340605027009516, guid: e7f14c984c08e924cb13a80ca5460233, type: 3}
 --- !u!1 &92417177
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +708,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5171976326053329327, guid: e7f14c984c08e924cb13a80ca5460233, type: 3}
 --- !u!1 &1240203082
@@ -874,6 +902,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7028461072418719135, guid: e7f14c984c08e924cb13a80ca5460233,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7028461072418719135, guid: e7f14c984c08e924cb13a80ca5460233,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pared
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e7f14c984c08e924cb13a80ca5460233,
         type: 3}
       propertyPath: m_Name
@@ -942,6 +980,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 151793705}
+    - targetCorrespondingSourceObject: {fileID: -7028461072418719135, guid: e7f14c984c08e924cb13a80ca5460233,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 35612529}
     - targetCorrespondingSourceObject: {fileID: 3346744340266656872, guid: e7f14c984c08e924cb13a80ca5460233,
         type: 3}
       insertIndex: -1
@@ -1459,7 +1501,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
-  targetPosition: {x: 1.5, y: 2.5, z: -6.7}
+  targetPosition: {x: 1.5, y: 2.5, z: -6}
   _force: 125
 --- !u!1 &2103695531 stripped
 GameObject:
@@ -1492,7 +1534,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3165151424671329746, guid: e7f14c984c08e924cb13a80ca5460233, type: 3}
 --- !u!1 &2136677088 stripped
