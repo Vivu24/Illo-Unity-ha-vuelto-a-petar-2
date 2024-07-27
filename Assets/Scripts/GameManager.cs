@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,9 @@ public class GameManager : MonoBehaviour
     //Singleton of game manager
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
+
+    [SerializeField]
+    private EventManager _eventManager;
 
     #endregion
 
@@ -22,6 +26,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _loadingBeltVelocity;
     public float LoadingBeltVelocity { get { return _loadingBeltVelocity; } }
+
+    // EVENT TIMER //
+    [SerializeField]
+    private float _eventMaxCooldown;
+    [SerializeField]
+    private float _eventTimer = 0;
 
     public int _lifes = 3;
     public int Lifes { get { return _lifes; } }
@@ -54,6 +64,18 @@ public class GameManager : MonoBehaviour
     {
         _lifes = 3;
     }
+
+    public void EventUpdate()
+    {
+        _eventTimer += Time.deltaTime;
+        Debug.Log(_eventTimer);
+        if (_eventTimer > _eventMaxCooldown)
+        {
+            _eventTimer = 0;
+            _eventManager.ChangeEvent();
+        }
+
+    }
     #endregion
 
     // Start is called before the first frame update
@@ -65,7 +87,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        EventUpdate();
     }
 
 }

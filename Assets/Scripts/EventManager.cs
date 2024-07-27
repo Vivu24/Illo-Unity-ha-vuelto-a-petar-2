@@ -13,8 +13,9 @@ public class EventManager : MonoBehaviour
     [SerializeField] private GameObject _luz;
 
 
-    private void ChangeEvent()
+    public void ChangeEvent()
     {
+        Debug.Log("EVENTO");
         switch (numOfEvent)
         {
             case 1:
