@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     private int _maxNumberOfEvents;
 
     public int _lifes = 3;
+    private int _score = 0;
     public int Lifes { get { return _lifes; } }
 
     #endregion
