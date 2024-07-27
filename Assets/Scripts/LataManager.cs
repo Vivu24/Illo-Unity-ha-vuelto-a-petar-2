@@ -13,7 +13,7 @@ public class LataManager : MonoBehaviour
     void Start()
     {
         _tr = transform;
-        _timer = 10; // getter del gamemanager
+        _timer = GameManager.Instance.CanCadency;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class LataManager : MonoBehaviour
         if (_timer <= 0)
         {
             Instantiate(_lata, _tr);
-            _timer = 10; // getter del gamemanager
+            _timer = GameManager.Instance.CanCadency;
         }
 
         _timer -= Time.deltaTime;

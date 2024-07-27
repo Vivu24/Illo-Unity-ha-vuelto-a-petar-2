@@ -5,12 +5,13 @@ using UnityEngine;
 public class CintaPutaMadre : MonoBehaviour
 {
     private Rigidbody _rb;
-    private float _speed = 1;
+    private float _speed;
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _speed = GameManager.Instance.LoadingBeltVelocity;
     }
 
     // Update is called once per frame
