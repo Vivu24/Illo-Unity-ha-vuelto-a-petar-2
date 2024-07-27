@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +9,9 @@ public class GameManager : MonoBehaviour
     //Singleton of game manager
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
+
+    [SerializeField]
+    private EventManager _eventManager;
 
     #endregion
 
@@ -21,6 +26,26 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _loadingBeltVelocity;
     public float LoadingBeltVelocity { get { return _loadingBeltVelocity; } }
+
+    // EVENT TIMER //
+    [SerializeField]
+    private float _eventMaxCooldown;
+    [SerializeField]
+    private float _eventTimer = 0;
+    [SerializeField]
+    private float _eventLimitCooldown = 1;
+
+    // LOADING BELT TIMER //
+    [SerializeField]
+    private float _beltMaxCooldown;
+    [SerializeField]
+    private float _beltTimer = 0;
+
+
+    [SerializeField]
+    private int _totalEventCounter = 0;
+    [SerializeField]
+    private int _maxNumberOfEvents;
 
     public int _lifes = 3;
     public int Lifes { get { return _lifes; } }
@@ -46,25 +71,59 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Finalizar Juego
+            SceneManager.LoadScene(0);  // Vuelve al Menú
         }
     }
     public void ResetLifes()
     {
         _lifes = 3;
     }
+
+    public void EventUpdate()
+    {
+        _eventTimer += Time.deltaTime;
+        if (_eventTimer > _eventMaxCooldown)
+        {
+            CalculateEventTimer();
+            _eventTimer = 0;
+            _eventManager.ChangeEvent(UnityEngine.Random.Range(1, _maxNumberOfEvents + 1));
+            _totalEventCounter++;
+        }
+
+    }
+
+    public void CalculateEventTimer()
+    {
+        if (_eventMaxCooldown > _eventLimitCooldown)
+        {
+            _eventMaxCooldown -= 0.25f;
+        }
+    }
+
+    public void LoadingBeltUpdate()
+    {
+        _beltTimer += Time.deltaTime;
+        if (_beltTimer > _beltMaxCooldown)
+        {
+            CalculateEventTimer();
+            _beltTimer = 0;
+            _loadingBeltVelocity += 5;
+        }
+    }
+
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-
+        ResetLifes();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        EventUpdate();
+        LoadingBeltUpdate();
     }
 
 }
