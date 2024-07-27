@@ -19,7 +19,13 @@ public class Cursor : MonoBehaviour
     private bool isMoving = false;
     private bool tieneLata = false;
 
+    [SerializeField] private BoxCollider _boxCollider;
+    [SerializeField] private CapsuleCollider _capsuleCollider;
+    [SerializeField] private BoxCollider _catCollider;
+
     [SerializeField] private float _force;
+
+    private int _pets = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +43,7 @@ public class Cursor : MonoBehaviour
 
         if (Physics.Raycast(_cam.ScreenPointToRay(Input.mousePosition), out _hit, 1000, _layer) && Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Raycast");
+            Debug.Log("Raycast: " + _hit.transform.gameObject);
 
             GameObject obj = _hit.transform.gameObject;
 
@@ -47,6 +53,7 @@ public class Cursor : MonoBehaviour
             }
             else if (obj.GetComponent<Orbit>() != null)
             {
+                Debug.Log("mosca");
                 Destroy(obj.transform.parent.gameObject);
             }
             else if (obj.tag == "Lata" && !isMoving && !tieneLata)
@@ -56,6 +63,16 @@ public class Cursor : MonoBehaviour
             else if ((obj.tag == "Pared" || obj.tag == "Lata") && tieneLata)
             {
                 throwCan(_hit.point);
+            }
+            else if (obj.GetComponent<Gatete>() != null)
+            {
+                _pets++;
+
+                if (_pets == 4)
+                {
+                    obj.GetComponent<Gatete>().FlipAndLeave();
+                    _pets = 0;
+                }
             }
         }
 
@@ -83,6 +100,12 @@ public class Cursor : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezePosition;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
+        _boxCollider = rb.GetComponent<BoxCollider>();
+        _boxCollider.enabled = false;  
+        _capsuleCollider = rb.GetComponent<CapsuleCollider>();
+        _capsuleCollider.enabled = false;
+        
+
         lataEnMano = _can;
         isMoving = true;
     }
@@ -97,6 +120,9 @@ public class Cursor : MonoBehaviour
 
         //aplico fuerza a la lata, en la direccion donde ha colisionado el rayo
         rb.AddForce((target - lataEnMano.transform.position).normalized * _force, ForceMode.Impulse);
+
+       _boxCollider.enabled = true;
+        _capsuleCollider.enabled = true;
 
         tieneLata = false;
     }

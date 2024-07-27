@@ -16,7 +16,7 @@ public class CintaPutaMadre : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 pos = _rb.position;
-        _rb.position -= Vector3.right * GameManager.Instance.LoadingBeltVelocity * Time.fixedDeltaTime;
+        _rb.position += Vector3.right * GameManager.Instance.LoadingBeltVelocity * Time.fixedDeltaTime;
         _rb.MovePosition(pos);
     }
 }
