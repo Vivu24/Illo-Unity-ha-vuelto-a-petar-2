@@ -203,10 +203,13 @@ MonoBehaviour:
   _eventManager: {fileID: 92417178}
   _canCadency: 0
   _loadingBeltVelocity: 0
-  _eventMaxCooldown: 3
+  _eventMaxCooldown: 5
   _eventTimer: 0
   _eventLimitCooldown: 1
+  _beltMaxCooldown: 3
+  _beltTimer: 0
   _totalEventCounter: 0
+  _maxNumberOfEvents: 4
   _lifes: 3
 --- !u!4 &269601291
 Transform:

@@ -35,6 +35,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _eventLimitCooldown = 1;
 
+    // LOADING BELT TIMER //
+    [SerializeField]
+    private float _beltMaxCooldown;
+    [SerializeField]
+    private float _beltTimer = 0;
+
+
     [SerializeField]
     private int _totalEventCounter = 0;
     [SerializeField]
@@ -75,7 +82,6 @@ public class GameManager : MonoBehaviour
     public void EventUpdate()
     {
         _eventTimer += Time.deltaTime;
-        Debug.Log(_eventTimer);
         if (_eventTimer > _eventMaxCooldown)
         {
             CalculateEventTimer();
@@ -94,6 +100,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadingBeltUpdate()
+    {
+        _beltTimer += Time.deltaTime;
+        if (_beltTimer > _beltMaxCooldown)
+        {
+            CalculateEventTimer();
+            _beltTimer = 0;
+            _loadingBeltVelocity += 5;
+        }
+    }
+
     #endregion
 
     // Start is called before the first frame update
@@ -106,6 +123,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         EventUpdate();
+        LoadingBeltUpdate();
     }
 
 }
