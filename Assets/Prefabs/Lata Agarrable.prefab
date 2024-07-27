@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8993522938372332454}
   - component: {fileID: 1763006826683084311}
   - component: {fileID: 4470935996815742805}
-  - component: {fileID: -237347125782481789}
   m_Layer: 0
   m_Name: Lata Agarrable
   m_TagString: Lata
@@ -106,15 +105,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-237347125782481789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411953711603755488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90deaaaebbd999c41976197c904ecee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
