@@ -83,8 +83,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(0);  // Vuelve al Menú
+            PlayerDies();
         }
+    }
+    public void PlayerDies()
+    {
+        SceneManager.LoadScene("LeaderboardScene");
     }
     public void ResetLifes()
     {
@@ -135,7 +139,7 @@ public class GameManager : MonoBehaviour
         {
             CalculateEventTimer();
             _beltTimer = 0;
-            _loadingBeltVelocity += 0.5f;
+            _loadingBeltVelocity += 0.25f;
         }
     }
 
@@ -144,12 +148,18 @@ public class GameManager : MonoBehaviour
         _score += n;
     }
 
+    public void ResetScore()
+    {
+        _score = 0;
+    }
+
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         ResetLifes();
+        ResetScore();
     }
 
     // Update is called once per frame

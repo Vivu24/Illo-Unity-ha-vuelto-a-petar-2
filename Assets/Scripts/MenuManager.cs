@@ -22,9 +22,15 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("MainPrueba");
     }
 
-    public void LoadCreditsState()
+    public void LoadLeadBoardState()
     {
-        SceneManager.LoadScene("MainPrueba");
+        SceneManager.LoadScene("LeaderBoardScene");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MenuPrueba");
+
     }
 
     public void LoadExitApplication()

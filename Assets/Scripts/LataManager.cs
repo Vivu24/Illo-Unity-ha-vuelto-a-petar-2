@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LataManager : MonoBehaviour
 {
     private Transform _tr;
     private float _timer;
+    private float _initialZ;
+    [SerializeField]
+    private float _randomizer;
 
     [SerializeField] private GameObject _lata;
 
@@ -13,6 +17,7 @@ public class LataManager : MonoBehaviour
     void Start()
     {
         _tr = transform;
+        _initialZ = _tr.position.z;
         _timer = GameManager.Instance.CanCadency;
     }
 
@@ -21,7 +26,12 @@ public class LataManager : MonoBehaviour
     {
         if (_timer <= 0)
         {
-            Instantiate(_lata, _tr);
+            _randomizer = Random.Range(-0.5f, 0.5f);
+            //Vector3 aux3D = new Vector3(_tr.position.x, _tr.position.y, _tr.position.z + _randomizer);
+            //Transform auxTr = _tr;
+            //auxTr.position = aux3D;
+            Instantiate(_lata, _tr).transform.position = new Vector3(_tr.position.x, _tr.position.y, _tr.position.z + _randomizer);
+
             _timer = GameManager.Instance.CanCadency;
         }
 
