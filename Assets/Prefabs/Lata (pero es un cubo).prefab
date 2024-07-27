@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6357664482581003576}
   - component: {fileID: 721806659858340101}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Collider pal gato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,9 +66,9 @@ GameObject:
   - component: {fileID: 2808285140664800974}
   - component: {fileID: 7981306283126391799}
   - component: {fileID: 5731857045517054394}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lata (pero es un cubo)
-  m_TagString: Untagged
+  m_TagString: Lata
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

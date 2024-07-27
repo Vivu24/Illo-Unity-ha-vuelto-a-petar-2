@@ -14,9 +14,6 @@ public class EventManager : MonoBehaviour
     [SerializeField] private GameObject _jefe2;
     [SerializeField] private GameObject _jefe3;
     [SerializeField] private GameObject _luz;
-    [SerializeField] private GameObject _punto1;
-    [SerializeField] private GameObject _punto2;
-    [SerializeField] private GameObject _punto3;
     private Vector3 p1pos;
     private Vector3 p2pos;
     private Vector3 p3pos;
@@ -78,10 +75,6 @@ public class EventManager : MonoBehaviour
 
     private void RndInitialPoint()
     {
-        p1pos = _punto1.transform.position;
-        p2pos = _punto2.transform.position;
-        p3pos = _punto3.transform.position;
-
         int rnd = Random.Range(0, 7);
         if (rnd == 0)
         {
