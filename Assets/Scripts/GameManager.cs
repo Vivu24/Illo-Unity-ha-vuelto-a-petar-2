@@ -35,6 +35,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _eventLimitCooldown = 1;
 
+    // CAN CADENCY TIMER //
+    [SerializeField]
+    private float _canMaxCooldown;
+    [SerializeField]
+    private float _canTimer = 0;
+    [SerializeField]
+    private float _canLimitVelocity = 1;
+
     // LOADING BELT TIMER //
     [SerializeField]
     private float _beltMaxCooldown;
@@ -99,7 +107,23 @@ public class GameManager : MonoBehaviour
             _eventMaxCooldown -= 0.25f;
         }
     }
-
+    public void CanUpdate()
+    {
+        _canTimer += Time.deltaTime;
+        if (_canTimer > _canMaxCooldown)
+        {
+            CalculateCanTimer();
+            _canTimer = 0;
+            
+        }
+    }
+    public void CalculateCanTimer()
+    {
+        if (_canCadency > _canLimitVelocity)
+        {
+            _canCadency -= 0.25f;
+        }
+    }
     public void LoadingBeltUpdate()
     {
         _beltTimer += Time.deltaTime;
@@ -107,7 +131,7 @@ public class GameManager : MonoBehaviour
         {
             CalculateEventTimer();
             _beltTimer = 0;
-            _loadingBeltVelocity += 5;
+            _loadingBeltVelocity += 0.5f;
         }
     }
 
@@ -124,6 +148,7 @@ public class GameManager : MonoBehaviour
     {
         EventUpdate();
         LoadingBeltUpdate();
+        CanUpdate();
     }
 
 }
