@@ -10,6 +10,8 @@ public class MoscaCojonera : MonoBehaviour
     private float _timer = 1;
     private Vector3 _dir;
     [SerializeField] private float _speed;
+    [SerializeField] private Sprite _first;
+    [SerializeField] private Sprite _second;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +30,10 @@ public class MoscaCojonera : MonoBehaviour
         }
         _tr.localPosition += _dir * Time.deltaTime * _speed;
         _timer -= Time.deltaTime;
+
+        if (_tr.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite == _first)
+            _tr.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = _second;
+        else if (_tr.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite == _second)
+            _tr.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = _first;
     }
 }

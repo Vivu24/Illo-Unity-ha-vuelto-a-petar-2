@@ -143,7 +143,27 @@ PrefabInstance:
     - target: {fileID: 3074409166363105344, guid: 6bc3cac3397b7824f9279734db88a59c,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269373750982885707, guid: 6bc3cac3397b7824f9279734db88a59c,
+        type: 3}
+      propertyPath: _speed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448722627507966265, guid: 6bc3cac3397b7824f9279734db88a59c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.3427
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448722627507966265, guid: 6bc3cac3397b7824f9279734db88a59c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.3427
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448722627507966265, guid: 6bc3cac3397b7824f9279734db88a59c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.3427
       objectReference: {fileID: 0}
     - target: {fileID: 6448722627507966265, guid: 6bc3cac3397b7824f9279734db88a59c,
         type: 3}
@@ -198,7 +218,7 @@ PrefabInstance:
     - target: {fileID: 7063676262819412282, guid: 6bc3cac3397b7824f9279734db88a59c,
         type: 3}
       propertyPath: _speed
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9176526708071710624, guid: 6bc3cac3397b7824f9279734db88a59c,
         type: 3}
@@ -253,6 +273,7 @@ MonoBehaviour:
   _totalEventCounter: 0
   _maxNumberOfEvents: 4
   _lifes: 3
+  _flies: 0
 --- !u!4 &52692361
 Transform:
   m_ObjectHideFlags: 0
@@ -612,7 +633,7 @@ Transform:
   m_GameObject: {fileID: 1136605260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.279, y: 1.61, z: -4.865}
+  m_LocalPosition: {x: 2.91, y: 1.61, z: -4.865}
   m_LocalScale: {x: 1.0141, y: 1.0141, z: 1.0141}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -677,6 +698,10 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
+  targetPosition: {x: 0, y: 0, z: 0}
+  _boxCollider: {fileID: 0}
+  _capsuleCollider: {fileID: 0}
+  _catCollider: {fileID: 0}
   _force: 0
 --- !u!1 &1431998845
 GameObject:
