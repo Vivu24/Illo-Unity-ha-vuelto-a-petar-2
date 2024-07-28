@@ -61,6 +61,10 @@ public class Cursor : MonoBehaviour
             {
                 takeCan(obj);
             }
+            else if (obj.tag == "Redbull" && !tieneLata && !isMoving)
+            {
+                drinkRedbull(obj);
+            }
             else if ((obj.tag == "Pared" || obj.tag == "Lata") && tieneLata)
             {
                 throwCan(_hit.point);
@@ -111,6 +115,16 @@ public class Cursor : MonoBehaviour
         isMoving = true;
     }
 
+    private void drinkRedbull(GameObject can)
+    {
+        takeCan(can);
+        if (!can.GetComponent<Producto>().isUsed())
+        {
+            GameManager.Instance.drinkRedbull();
+            can.GetComponent<Producto>().setUsed(true);
+        }
+    }
+
     private void throwCan(Vector3 target)
     {
         Debug.Log("lanzo");
@@ -126,5 +140,11 @@ public class Cursor : MonoBehaviour
         _capsuleCollider.enabled = true;
 
         tieneLata = false;
+        if (lataEnMano.GetComponent<Producto>().isUsed())
+        {
+            GameManager.Instance.spawnRedbull();
+            lataEnMano.tag= ("Lata");
+            lataEnMano.GetComponent<Producto>().setUsed(false);
+        }
     }
 }

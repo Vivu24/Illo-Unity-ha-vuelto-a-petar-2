@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private EventManager _eventManager;
+    public Transform _rbSpawner;
+    public GameObject _rbSpawnerPrefab;
 
     #endregion
 
@@ -167,6 +170,16 @@ public class GameManager : MonoBehaviour
     public void ResetScore()
     {
         _score = 0;
+    }
+
+    public void drinkRedbull()
+    {
+        _eventManager.GetComponent<TiredEvent>().restartCaffeine();
+    }
+
+    public void spawnRedbull()
+    {
+        Instantiate(_rbSpawnerPrefab, _rbSpawner.position, Quaternion.identity);
     }
 
     #endregion
