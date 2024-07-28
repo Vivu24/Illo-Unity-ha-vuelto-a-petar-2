@@ -80,7 +80,6 @@ public class Cursor : MonoBehaviour
                 {
                     obj.GetComponent<Gatete>().FlipAndLeave();
                     _pets = 0;
-
                 }
             }
         }
