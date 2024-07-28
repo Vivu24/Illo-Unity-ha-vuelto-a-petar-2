@@ -141,7 +141,10 @@ public class GameManager : MonoBehaviour
             {
                 CalculateEventTimer();
                 _eventTimer = 0;
-                _eventManager.ChangeEvent(UnityEngine.Random.Range(1, _maxNumberOfEvents + 1));
+                if(SceneManager.GetActiveScene().name == "MainPrueba")
+                { 
+                    _eventManager.ChangeEvent(UnityEngine.Random.Range(1, _maxNumberOfEvents + 1)); 
+                }
                 _totalEventCounter++;
             }
         }
@@ -237,7 +240,7 @@ public class GameManager : MonoBehaviour
         CanUpdate();
 
         timePlayed = Time.time - startTime;
-        if (cansDeployed >= 5)
+        if (cansDeployed >= 5 && SceneManager.GetActiveScene().name == "MainPrueba")
         {
             canAcuraccy = cansEnBasura / cansDeployed;
             if (canAcuraccy < 0.3f)

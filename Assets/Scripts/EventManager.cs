@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 
@@ -24,22 +25,25 @@ public class EventManager : MonoBehaviour
 
     public void ChangeEvent(int n)
     {
-        numOfEvent = n;
-        switch (numOfEvent)
+        if(SceneManager.GetActiveScene().name == "MainPrueba")
         {
-            case 1:
-                MoscaEvent();
-                break;
-            case 2:
-                GatitoEvent();
-                break;
-            case 3:
-                JefeEvent();
-                break;
-            case 4:
-                LuzEvent();
-                break;
-      
+            numOfEvent = n;
+            switch (numOfEvent)
+            {
+                case 1:
+                    MoscaEvent();
+                    break;
+                case 2:
+                    GatitoEvent();
+                    break;
+                case 3:
+                    JefeEvent();
+                    break;
+                case 4:
+                    LuzEvent();
+                    break;
+
+            }
         }
     }
 
