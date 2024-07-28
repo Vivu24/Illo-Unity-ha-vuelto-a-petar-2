@@ -27,4 +27,8 @@ public class Producto : MonoBehaviour
     {
         _isUsed = isUsed;
     }
+    public void setColor(int color)
+    {
+        _color = color;
+    }
 }

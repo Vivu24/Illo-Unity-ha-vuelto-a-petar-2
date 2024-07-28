@@ -13,10 +13,14 @@ public class Contenedor : MonoBehaviour
             if (other.gameObject.GetComponent<Producto>().color() == _color)
             {
                 GameManager.Instance.AddPoints(49);
+                other.gameObject.GetComponent<Producto>().enabled = false;
+                Debug.Log("BIEN");
             }
             else
             {
+                other.gameObject.GetComponent<Producto>().enabled = false;
                 GameManager.Instance.LoseLife();
+                
             }
         }
         else

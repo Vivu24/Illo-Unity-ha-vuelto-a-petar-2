@@ -30,6 +30,7 @@ public class TiredEvent : MonoBehaviour
     }
     IEnumerator Blink(float delay)
     {
+        
         animator.SetBool("sleep", true);
         yield return new WaitForSeconds(delay);
         animator.SetBool("sleep", false);

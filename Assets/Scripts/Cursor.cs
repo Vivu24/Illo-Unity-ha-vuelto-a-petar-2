@@ -135,7 +135,7 @@ public class Cursor : MonoBehaviour
         rb.AddForce((target - lataEnMano.transform.position).normalized * _force, ForceMode.Impulse);
 
        _boxCollider.enabled = true;
-        _capsuleCollider.enabled = true;
+        //_capsuleCollider.enabled = true;
 
         tieneLata = false;
         if (lataEnMano.GetComponent<Producto>().isUsed())

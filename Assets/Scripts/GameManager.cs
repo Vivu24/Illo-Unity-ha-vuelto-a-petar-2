@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public Transform _rbSpawner;
     public GameObject _rbSpawnerPrefab;
 
+    public GameObject[] vidas;
+
     #endregion
 
     #region PROPERTIES
@@ -72,6 +74,13 @@ public class GameManager : MonoBehaviour
 
     public bool catActive = false;
     public bool bossActive = false;
+
+    [SerializeField]
+    public AudioClip[] bostezo;
+    public AudioClip[] fallo;
+    public AudioClip[] gatoFeliz;
+    public AudioClip[] gatoEnfadao;
+
     #endregion
 
 
@@ -86,12 +95,15 @@ public class GameManager : MonoBehaviour
     
     public void LoseLife()
     {
-        if (_lifes >= 1)
+        if (_lifes > 1)
         {
+            
             _lifes--;
+            vidas[_lifes].gameObject.SetActive(false);
         }
         else
         {
+            
             PlayerDies();
         }
     }

@@ -10,8 +10,9 @@ public class LataManager : MonoBehaviour
     private float _initialZ;
     [SerializeField]
     private float _randomizer;
+    Color color;
 
-    [SerializeField] private GameObject _lata;
+    [SerializeField] private GameObject[] _lata;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +31,20 @@ public class LataManager : MonoBehaviour
             //Vector3 aux3D = new Vector3(_tr.position.x, _tr.position.y, _tr.position.z + _randomizer);
             //Transform auxTr = _tr;
             //auxTr.position = aux3D;
-            Instantiate(_lata, _tr).transform.position = new Vector3(_tr.position.x, _tr.position.y, _tr.position.z + _randomizer);
+            LataCreator();
 
             _timer = GameManager.Instance.CanCadency;
         }
 
         _timer -= Time.deltaTime;
+    }
+
+    void LataCreator()
+    {
+        int colorRandom = Random.Range(0, 5);
+
+        Instantiate(_lata[colorRandom], _tr).transform.position = new Vector3(_tr.position.x, _tr.position.y, _tr.position.z + _randomizer);
+        
+        
     }
 }
