@@ -32,7 +32,7 @@ public class MenuManager : MonoBehaviour
     {
         panel.SetTrigger("fade");
         Debug.Log("holi");
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("MainPrueba");
     }
