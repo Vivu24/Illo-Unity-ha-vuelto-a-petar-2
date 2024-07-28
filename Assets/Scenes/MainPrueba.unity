@@ -824,6 +824,62 @@ MonoBehaviour:
   _capsuleCollider: {fileID: 0}
   _catCollider: {fileID: 0}
   _force: 50
+--- !u!114 &192644255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192644249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ade8b782ae6e2b4b8b24c55caa8ecd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  duration: 1
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.011112213
+      value: 0.0015716553
+      inSlope: 0.85764396
+      outSlope: 0.85764396
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.12960581
+      value: 0.10319698
+      inSlope: 0.35271695
+      outSlope: 0.35271695
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.39920622
+      value: 0.062161088
+      inSlope: -0.11477037
+      outSlope: -0.11477037
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.015701294
+      inSlope: -0.077330686
+      outSlope: -0.077330686
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &193395971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1787,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6405344154591093208, guid: 9e38d3a4124ba7e43becd1701ecf2c75,
+        type: 3}
+      propertyPath: _audios.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405344154591093208, guid: 9e38d3a4124ba7e43becd1701ecf2c75,
+        type: 3}
+      propertyPath: _audios.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6971cf6bad853204580ce5af4f02569f, type: 3}
     - target: {fileID: 9153895533109877786, guid: 9e38d3a4124ba7e43becd1701ecf2c75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4123,6 +4189,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 192644250}
+    - targetCorrespondingSourceObject: {fileID: 108404240622370314, guid: cac153a04356f7e4fb72bc6e6a8dde83,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 192644255}
     - targetCorrespondingSourceObject: {fileID: 4455474662910233000, guid: cac153a04356f7e4fb72bc6e6a8dde83,
         type: 3}
       insertIndex: -1
