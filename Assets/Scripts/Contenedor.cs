@@ -15,6 +15,7 @@ public class Contenedor : MonoBehaviour
                 GameManager.Instance.AddPoints(49);
                 other.gameObject.GetComponent<Producto>().enabled = false;
                 Debug.Log("BIEN");
+                GameManager.Instance.cansEnBasura++;
             }
             else
             {

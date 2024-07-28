@@ -70,6 +70,10 @@ public class GameManager : MonoBehaviour
     // FLY COUNTER //
     [SerializeField]
     private int _flies;
+    private float timePlayed;
+    public float canAcuraccy;
+    public float cansDeployed;
+    public float cansEnBasura;
     public int Flies { get { return _flies; } }
 
     public bool catActive = false;
@@ -80,7 +84,7 @@ public class GameManager : MonoBehaviour
     public AudioClip[] fallo;
     public AudioClip[] gatoFeliz;
     public AudioClip[] gatoEnfadao;
-
+    private float startTime;
     #endregion
 
 
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
     {
         if (_instance == null) _instance = this;
         else Destroy(this);
+        startTime = Time.time;
     }
 
 
@@ -109,7 +114,7 @@ public class GameManager : MonoBehaviour
     }
     public void PlayerDies()
     {
-        SceneManager.LoadScene("LeaderboardScene");
+        SceneManager.LoadScene("QuechuScene");
     }
     public void ResetLifes()
     {
@@ -118,14 +123,18 @@ public class GameManager : MonoBehaviour
 
     public void EventUpdate()
     {
-        _eventTimer += Time.deltaTime;
-        if (_eventTimer > _eventMaxCooldown)
+        if(_lifes > 0)
         {
-            CalculateEventTimer();
-            _eventTimer = 0;
-            _eventManager.ChangeEvent(UnityEngine.Random.Range(1, _maxNumberOfEvents + 1));
-            _totalEventCounter++;
+            _eventTimer += Time.deltaTime;
+            if (_eventTimer > _eventMaxCooldown)
+            {
+                CalculateEventTimer();
+                _eventTimer = 0;
+                _eventManager.ChangeEvent(UnityEngine.Random.Range(1, _maxNumberOfEvents + 1));
+                _totalEventCounter++;
+            }
         }
+        
 
     }
 
@@ -181,7 +190,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetFlies()
     {
-        _flies = 12;
+        _flies = 0;
     }
 
     public void ResetScore()
@@ -215,6 +224,18 @@ public class GameManager : MonoBehaviour
         EventUpdate();
         LoadingBeltUpdate();
         CanUpdate();
+
+        timePlayed = Time.time - startTime;
+        if (cansDeployed >= 5)
+        {
+            canAcuraccy = cansEnBasura / cansDeployed;
+            if (canAcuraccy < 0.3f)
+                {
+                    PlayerDies();
+                Debug.Log("cANaCURAZY: "+ canAcuraccy);
+                }
+        }
+       
     }
 
 }
