@@ -97,13 +97,13 @@ public class GameManager : MonoBehaviour
     {
         if (_lifes > 1)
         {
-            
+            SonidoFallo();
             _lifes--;
             vidas[_lifes].gameObject.SetActive(false);
         }
         else
         {
-            
+            SonidoFallo();
             PlayerDies();
         }
     }
@@ -129,6 +129,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void SonidoFallo()
+    {
+        AudioSource.PlayClipAtPoint(fallo[0], new Vector3(0, 0, 0));
+    }
     public void CalculateEventTimer()
     {
         if (_eventMaxCooldown > _eventLimitCooldown)

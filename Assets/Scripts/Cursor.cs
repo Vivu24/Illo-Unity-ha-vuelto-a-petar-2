@@ -71,12 +71,16 @@ public class Cursor : MonoBehaviour
             }
             else if (obj.GetComponent<Gatete>() != null)
             {
+                AudioClip gatoFeliz = GameManager.Instance.gatoFeliz[Random.Range(0, GameManager.Instance.gatoFeliz.Length)];
+
+                AudioSource.PlayClipAtPoint(gatoFeliz, new Vector3(0, 0, 0));
                 _pets++;
 
                 if (_pets == 4)
                 {
                     obj.GetComponent<Gatete>().FlipAndLeave();
                     _pets = 0;
+
                 }
             }
         }

@@ -890,6 +890,34 @@ MonoBehaviour:
   _flies: 0
   catActive: 0
   bossActive: 0
+  bostezo:
+  - {fileID: 8300000, guid: 690489145a2eb2d43a647d67c1676ee2, type: 3}
+  - {fileID: 8300000, guid: de309ffd4ffd43a44952d88fa0fd6efc, type: 3}
+  - {fileID: 8300000, guid: 992b9dc946d459d4a9f9d6920d795b9d, type: 3}
+  - {fileID: 8300000, guid: f98e66af5f10b0047852a1c39f7f7482, type: 3}
+  - {fileID: 8300000, guid: 88562374d26b0cb40b65879dae7fbea2, type: 3}
+  fallo:
+  - {fileID: 8300000, guid: 2e3f1c9826b717644a800f03895ce4d0, type: 3}
+  - {fileID: 8300000, guid: 81441429d703f0342a203746378886cb, type: 3}
+  - {fileID: 8300000, guid: a8644fcce43414a4aa2d4c3134fa7758, type: 3}
+  - {fileID: 8300000, guid: c147f943132ac36428b0990558864345, type: 3}
+  - {fileID: 8300000, guid: 089e4db6b9feeda4681e387329fa04c4, type: 3}
+  - {fileID: 8300000, guid: c54161f2bb3c64d4c9e6a0eb0658587f, type: 3}
+  - {fileID: 8300000, guid: 050d9c75233098b42a62ead560148728, type: 3}
+  gatoFeliz:
+  - {fileID: 8300000, guid: 04a680ac2e17e894d916826f3a224f6c, type: 3}
+  - {fileID: 8300000, guid: c77940bb71ffc6744ba6adf51f7ac91d, type: 3}
+  - {fileID: 8300000, guid: 307db3b319c01bf4597d44152906877d, type: 3}
+  - {fileID: 8300000, guid: 4ddb1f16f55114f44869e9bbf4dda9d0, type: 3}
+  - {fileID: 8300000, guid: a995928d26d7a9a41bc6137789fe9f79, type: 3}
+  - {fileID: 8300000, guid: 57beaafb87bbda24b845f7e03596502a, type: 3}
+  - {fileID: 8300000, guid: cd290a4bf41a26a418f50c42af451d81, type: 3}
+  gatoEnfadao:
+  - {fileID: 8300000, guid: 7b2fa0a20f749fc418efe9688606e553, type: 3}
+  - {fileID: 8300000, guid: 76b4dca393db181439b99fd244f0abc4, type: 3}
+  - {fileID: 8300000, guid: d5a9f3d5cfd0c3d4f8d44bec4ebf7c4b, type: 3}
+  - {fileID: 8300000, guid: ee8ad46933f790b4797a4b8d65f11087, type: 3}
+  - {fileID: 8300000, guid: 64059f9ab14323c438efbd6ac2aaa93f, type: 3}
 --- !u!4 &269601291
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,7 +1171,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 379010558040167564, guid: e7f14c984c08e924cb13a80ca5460233, type: 3}
 --- !u!114 &399834696
@@ -1159,6 +1187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 1240203083}
+  palancaAnimator: {fileID: 852658848}
 --- !u!1 &437509307 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8324269557040208171, guid: cac153a04356f7e4fb72bc6e6a8dde83,

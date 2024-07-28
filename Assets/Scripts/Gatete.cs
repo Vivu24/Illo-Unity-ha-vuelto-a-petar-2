@@ -44,6 +44,9 @@ public class Gatete : MonoBehaviour
 
     public void Enter()
     {
+        AudioClip enfadao = GameManager.Instance.gatoEnfadao[Random.Range(0, GameManager.Instance.bostezo.Length)];
+
+        AudioSource.PlayClipAtPoint(enfadao, new Vector3(0, 0, 0));
         StartCoroutine(GoIn());
     }
 
