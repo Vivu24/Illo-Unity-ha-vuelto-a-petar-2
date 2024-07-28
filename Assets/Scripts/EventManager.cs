@@ -24,7 +24,7 @@ public class EventManager : MonoBehaviour
 
     public void ChangeEvent(int n)
     {
-        numOfEvent = 1;
+        numOfEvent = n;
         switch (numOfEvent)
         {
             case 1:
@@ -50,23 +50,40 @@ public class EventManager : MonoBehaviour
 
     private void GatitoEvent()
     {
-
+        if (!GameManager.Instance.catActive)
+        {
+            Debug.Log("gato");
+            GameManager.Instance.catActive = true;
+            _gatito.GetComponent<Gatete>().Enter();
+        }
+        else
+        {
+            ChangeEvent(UnityEngine.Random.Range(1, 5));
+        }
     }
 
     private void JefeEvent()
     {
-        RndInitialPoint();
+        if (!GameManager.Instance.bossActive)
+        {
+            GameManager.Instance.bossActive = true;
+            RndInitialPoint();
+        }
+        else
+        {
+            ChangeEvent(UnityEngine.Random.Range(1, 5));
+        }
     }
 
     private void LuzEvent()
     {
-
+        _luz.GetComponent<LightController>().TurnOff();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        ChangeEvent(3);
+        
     }
 
     // Update is called once per frame

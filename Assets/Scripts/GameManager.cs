@@ -70,7 +70,8 @@ public class GameManager : MonoBehaviour
     private int _flies;
     public int Flies { get { return _flies; } }
 
-
+    public bool catActive = false;
+    public bool bossActive = false;
     #endregion
 
 
@@ -85,7 +86,7 @@ public class GameManager : MonoBehaviour
     
     public void LoseLife()
     {
-        if (_lifes > 1)
+        if (_lifes >= 1)
         {
             _lifes--;
         }
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
     {
         if (_eventMaxCooldown > _eventLimitCooldown)
         {
-            _eventMaxCooldown -= 0.25f;
+            _eventMaxCooldown -= 0.15f;
         }
     }
     public void CanUpdate()

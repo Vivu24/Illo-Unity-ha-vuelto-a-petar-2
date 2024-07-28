@@ -18,6 +18,10 @@ public class EventoJefe2 : MonoBehaviour
     public float tiempo = 0f;
     private float contadorEspera = 0f;
 
+    [SerializeField] private AudioClip[] _audios;
+    private AudioSource _audioSource;
+    private bool _talking = false;
+
     void Start()
     {
         p2pos = punto2.transform.position;
@@ -38,9 +42,14 @@ public class EventoJefe2 : MonoBehaviour
             if (transform.position == posicionObjetivo)
             {
 
+                if (!_talking)
+                {
+                    ChooseAudio();
+                }
+
                 if (contadorEspera <= 0f)
                 {
-                    contadorEspera = tiempoEspera;
+                    contadorEspera = _audioSource.clip.length;
                 }
                 else
                 {
@@ -52,6 +61,8 @@ public class EventoJefe2 : MonoBehaviour
 
                         tiempo = 0f;
                         volviendo = true;
+                        _talking = false;
+                        GameManager.Instance.bossActive = false;
                     }
                 }
             }
@@ -69,6 +80,14 @@ public class EventoJefe2 : MonoBehaviour
 
             }
         }
+    }
+
+    private void ChooseAudio()
+    {
+        int rnd = Random.Range(0, 5);
+        _audioSource.clip = _audios[rnd];
+        _audioSource.Play();
+        _talking = true;
     }
 
 }

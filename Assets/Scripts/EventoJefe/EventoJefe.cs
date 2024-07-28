@@ -62,6 +62,7 @@ public class EventoJefe : MonoBehaviour
                         tiempo = 0f; 
                         volviendo = true;
                         _talking = false;
+                        GameManager.Instance.bossActive = false;
                     }
                 }
             }

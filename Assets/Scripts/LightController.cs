@@ -11,11 +11,11 @@ public class LightController : MonoBehaviour
 
     public void TurnOn()
     {
-        _light.intensity = 1;
+        _light.intensity = 3.57f;
     }
 
     public void TurnOff()
     {
-        _light.intensity = 0;
+        _light.intensity = 0.1f;
     }
 }
