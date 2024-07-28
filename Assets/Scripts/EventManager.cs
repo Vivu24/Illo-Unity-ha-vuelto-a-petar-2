@@ -25,7 +25,6 @@ public class EventManager : MonoBehaviour
     public void ChangeEvent(int n)
     {
         numOfEvent = 1;
-        Debug.Log("EVENTO");
         switch (numOfEvent)
         {
             case 1:
