@@ -32,6 +32,7 @@ public class MenuManager : MonoBehaviour
     {
         panel.SetTrigger("fade");
         Debug.Log("holi");
+        gameObject.SetActive(false);
         yield return new WaitForSeconds(3);
         SceneManager.LoadSceneAsync("MainPrueba");
         panel.SetTrigger("fade");
