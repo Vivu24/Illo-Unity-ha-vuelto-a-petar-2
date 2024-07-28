@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _hided = new Vector3(transform.position.x, transform.position.y + 300f, transform.position.z);
+        _hided = new Vector3(transform.position.x, transform.position.y + 400f, transform.position.z);
     }
 
     // Update is called once per frame

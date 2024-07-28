@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuPrueba.unity
     guid: 7bf172ad9c031b8429bca91b92a64dc0
   - enabled: 1
+    path: Assets/Scenes/MenuFinal.unity
+    guid: 9325d34ce46b9844ab586315025dbb1b
+  - enabled: 1
     path: Assets/Scenes/MainPrueba.unity
     guid: c3fd76b008c3ee04a8214ce90ddc2c15
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LeaderBoardScene.unity
     guid: de4fd69ff75f41b41aa0689349e07f20
   - enabled: 1
