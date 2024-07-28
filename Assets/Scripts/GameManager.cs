@@ -153,6 +153,16 @@ public class GameManager : MonoBehaviour
         _score += n;
     }
 
+    public void AddFlies(int n)
+    {
+        _flies += n;
+    }
+
+    public void ResetFlies()
+    {
+        _flies = 12;
+    }
+
     public void ResetScore()
     {
         _score = 0;
@@ -165,6 +175,7 @@ public class GameManager : MonoBehaviour
     {
         ResetLifes();
         ResetScore();
+        ResetFlies();
     }
 
     // Update is called once per frame

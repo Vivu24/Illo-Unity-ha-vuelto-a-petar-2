@@ -53,7 +53,8 @@ public class Cursor : MonoBehaviour
             }
             else if (obj.GetComponent<Orbit>() != null)
             {
-                Debug.Log("mosca");
+                Debug.Log("moscaaaaa");
+                GameManager.Instance.AddFlies(1);
                 Destroy(obj.transform.parent.gameObject);
             }
             else if (obj.tag == "Lata" && !isMoving && !tieneLata)

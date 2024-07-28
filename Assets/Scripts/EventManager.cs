@@ -24,7 +24,7 @@ public class EventManager : MonoBehaviour
 
     public void ChangeEvent(int n)
     {
-        numOfEvent = 3;
+        numOfEvent = 1;
         Debug.Log("EVENTO");
         switch (numOfEvent)
         {
@@ -76,71 +76,74 @@ public class EventManager : MonoBehaviour
         
     }
 
+    private void ActiveJefe1()
+    {
+        _jefe1.SetActive(true);
+        _jefe1.GetComponent<EventoJefe>().volviendo = false;
+        _jefe1.GetComponent<EventoJefe>().tiempo = 0f;
+    }
+
+    private void ActiveJefe2()
+    {
+        _jefe2.SetActive(true);
+        _jefe2.GetComponent<EventoJefe2>().volviendo = false;
+        _jefe2.GetComponent<EventoJefe2>().tiempo = 0f;
+    }
+
+    private void ActiveJefe3()
+    {
+        _jefe3.SetActive(true);
+        _jefe3.GetComponent<EventoJefe3>().volviendo = false;
+        _jefe3.GetComponent<EventoJefe3>().tiempo = 0f;
+    }
+
+    private void GestionDialogJefe()
+    {
+
+    }
+
+    private void ChooseDialogue(int jefe)
+    {
+        
+    }
+
+
     private void RndInitialPoint()
     {
         int rnd = Random.Range(0, 7);
         if (rnd == 0)
         {
-            _jefe1.SetActive(true);
-            _jefe1.GetComponent<EventoJefe>().volviendo = false;
-            _jefe1.GetComponent<EventoJefe>().tiempo = 0f;
+            ActiveJefe1();
           
         }
         else if (rnd == 1)
         {
-            _jefe2.SetActive(true);
-            _jefe2.GetComponent<EventoJefe2>().volviendo = false;
-            _jefe2.GetComponent<EventoJefe2>().tiempo = 0f;
+            ActiveJefe2();
         }
         else if(rnd == 2)
         {
-            _jefe3.SetActive(true);
-            _jefe3.GetComponent<EventoJefe3>().volviendo = false;
-            _jefe3.GetComponent<EventoJefe3>().tiempo = 0f;
+            ActiveJefe3();
         }
         else if (rnd == 3)
         {
-            _jefe1.SetActive(true);
-            _jefe1.GetComponent<EventoJefe>().volviendo = false;
-            _jefe1.GetComponent<EventoJefe>().tiempo = 0f;
-
-            _jefe2.SetActive(true);
-            _jefe2.GetComponent<EventoJefe2>().volviendo = false;
-            _jefe2.GetComponent<EventoJefe2>().tiempo = 0f;
+            ActiveJefe1();
+            ActiveJefe2();
         }
         else if (rnd == 4)
         {
-            _jefe2.SetActive(true);
-            _jefe2.GetComponent<EventoJefe2>().volviendo = false;
-            _jefe2.GetComponent<EventoJefe2>().tiempo = 0f;
-
-            _jefe3.SetActive(true);
-            _jefe3.GetComponent<EventoJefe3>().volviendo = false;
-            _jefe3.GetComponent<EventoJefe3>().tiempo = 0f;
+            ActiveJefe3();
+            ActiveJefe2();
         }
         else if (rnd == 5)
         {
-            _jefe1.SetActive(true);
-            _jefe1.GetComponent<EventoJefe>().volviendo = false;
-            _jefe1.GetComponent<EventoJefe>().tiempo = 0f;
-
-            _jefe3.SetActive(true);
-            _jefe3.GetComponent<EventoJefe3>().volviendo = false;
-            _jefe3.GetComponent<EventoJefe3>().tiempo = 0f;
+            ActiveJefe1();
+            ActiveJefe3();
         }
         else if (rnd == 6)
         {
-            _jefe1.SetActive(true);
-            _jefe1.GetComponent<EventoJefe>().volviendo = false;
-            _jefe1.GetComponent<EventoJefe>().tiempo = 0f;
-
-            _jefe2.SetActive(true);
-            _jefe2.GetComponent<EventoJefe2>().volviendo = false;
-            _jefe2.GetComponent<EventoJefe2>().tiempo = 0f;
-
-            _jefe3.SetActive(true);
-            _jefe3.GetComponent<EventoJefe3>().volviendo = false;
-            _jefe3.GetComponent<EventoJefe3>().tiempo = 0f;
+            ActiveJefe1();
+            ActiveJefe2();
+            ActiveJefe3();
         }
 
     }
