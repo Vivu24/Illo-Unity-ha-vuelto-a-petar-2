@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
     
     public void LoseLife()
     {
+        Camera.main.GetComponent<Shake>().start = true;
         if (_lifes > 1)
         {
             SonidoFallo();
