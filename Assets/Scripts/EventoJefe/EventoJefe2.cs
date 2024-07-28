@@ -28,6 +28,8 @@ public class EventoJefe2 : MonoBehaviour
         posicionInicial = p2pos;
 
         posicionObjetivo = posicionInicial + Vector3.left * distancia;
+
+        _audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {

@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
         {
             CalculateEventTimer();
             _beltTimer = 0;
-            _loadingBeltVelocity += 0.25f;
+            _loadingBeltVelocity += 0.15f;
         }
     }
 

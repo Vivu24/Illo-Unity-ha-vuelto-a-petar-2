@@ -21,11 +21,11 @@ public class Gatete : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.layer == 3)
         {
             Debug.Log("ostia");
             int lado = _lado[Random.Range(0, 2)];
-            other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(0, 50, _force * lado);
+            other.gameObject.GetComponent<Rigidbody>().AddForce(0, 50, _force * lado);
             if (lado == 1)
             {
                 _animator.Play("Delante");
