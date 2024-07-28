@@ -58,7 +58,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            ChangeEvent(UnityEngine.Random.Range(1, 5));
+            ChangeEvent(Random.Range(1, 5));
         }
     }
 
@@ -71,7 +71,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            ChangeEvent(UnityEngine.Random.Range(1, 5));
+            ChangeEvent(Random.Range(1, 5));
         }
     }
 
