@@ -393,7 +393,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18159478}
+      - m_Target: {fileID: 926033988}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
         m_MethodName: SubmitScore
         m_Mode: 1
@@ -405,13 +405,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 926033986}
-        m_TargetAssemblyTypeName: Leader2000, Assembly-CSharp
-        m_MethodName: disableButton
-        m_Mode: 2
+      - m_Target: {fileID: 18159473}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 18159473}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18159473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86708123e4455fa40aa84f2bf263bf7f, type: 3}
   m_Name: 
@@ -478,21 +478,6 @@ MonoBehaviour:
   moscas: 0
   latas: 0
   timer: 0
-  submitScoreEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 926033986}
-        m_TargetAssemblyTypeName: Leader2000, Assembly-CSharp
-        m_MethodName: SetLeaderboardEntry
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &20980751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3906,21 +3891,6 @@ MonoBehaviour:
   moscas: 0
   latas: 0
   timer: 0
-  submitScoreEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 926033986}
-        m_TargetAssemblyTypeName: Leader2000, Assembly-CSharp
-        m_MethodName: SetLeaderboardEntry
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &438857326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7286,21 +7256,6 @@ MonoBehaviour:
   moscas: 0
   latas: 0
   timer: 0
-  submitScoreEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 18159473}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &940136370
 GameObject:
   m_ObjectHideFlags: 0
@@ -10069,18 +10024,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3840315286509706010, guid: e7f14c984c08e924cb13a80ca5460233, type: 3}
---- !u!114 &1329699427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329699424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1c6735125cc6b48a3b4e393d9e8b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1329699428
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11794,10 +11737,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 804607217806302684, guid: cac153a04356f7e4fb72bc6e6a8dde83,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1329699427}
-    - targetCorrespondingSourceObject: {fileID: 804607217806302684, guid: cac153a04356f7e4fb72bc6e6a8dde83,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1329699426}
     - targetCorrespondingSourceObject: {fileID: 582942874556504796, guid: cac153a04356f7e4fb72bc6e6a8dde83,
         type: 3}
@@ -11836,6 +11775,7 @@ GameObject:
   - component: {fileID: 1511953854}
   - component: {fileID: 1511953853}
   - component: {fileID: 1511953852}
+  - component: {fileID: 1511953855}
   m_Layer: 5
   m_Name: Siguiente
   m_TagString: Untagged
@@ -11919,10 +11859,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1112184202}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1511953855}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11930,18 +11870,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 616170479}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1511953853
 MonoBehaviour:
@@ -11981,6 +11909,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511953850}
   m_CullTransparentMesh: 1
+--- !u!114 &1511953855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511953850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0216aa8f2df4a499be73420634448a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 0}
 --- !u!1 &1535279652
 GameObject:
   m_ObjectHideFlags: 0
@@ -16177,10 +16118,12 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
+  _audioManager: {fileID: 0}
   targetPosition: {x: 0.597, y: 0.398, z: 1.69}
   _boxCollider: {fileID: 0}
   _capsuleCollider: {fileID: 0}
   _catCollider: {fileID: 0}
+  _animator: {fileID: 0}
   _force: 75
 --- !u!20 &2092141393 stripped
 Camera:

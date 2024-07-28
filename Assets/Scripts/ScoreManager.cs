@@ -25,21 +25,21 @@ public class ScoreManager : MonoBehaviour
     public float latas; 
     public float timer; 
 
-    private TMP_InputField inputName;
+    //private TMP_InputField inputName;
 
-    public UnityEvent<string, int> submitScoreEvent;
+    //public UnityEvent<string, int> submitScoreEvent;
 
-    public void SubmitScore()
-    {
-        submitScoreEvent.Invoke(inputName.text, score);
-    }
+    //public void SubmitScore()
+    //{
+    //    submitScoreEvent.Invoke(inputName.text, score);
+    //}
 
     void Start()
     {
         moscas = (float)GameManager.Instance.getFlies();
         latas = GameManager.Instance.cansEnBasura;
         timer = GameManager.Instance.getTime();
-        Debug.Log("f: " + moscas + " l: " + latas + "t: "+timer);
+        Debug.Log("f: " + moscas + " l: " + latas + "t: " + timer);
 
 
         StartCoroutine(Print(moscas, moscasCount));
@@ -47,10 +47,10 @@ public class ScoreManager : MonoBehaviour
         StartCoroutine(Print(timer, timerCount));
         StartCoroutine(Print(moscas * 437, moscasScore));
         StartCoroutine(Print(latas * 187, latasScore));
-        StartCoroutine(Print(timer *31, timerScore));
+        StartCoroutine(Print(timer * 31, timerScore));
 
         StartCoroutine(Print(moscas * 437 + latas * 187 + timer * 31, scoreText));
-        score= System.Convert.ToInt32(moscas * 437 + latas * 187 + timer*31);
+        score = System.Convert.ToInt32(moscas * 437 + latas * 187 + timer * 31);
     }
 
     IEnumerator Print(float score, TextMeshProUGUI text)

@@ -1346,10 +1346,12 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
+  _audioManager: {fileID: 0}
   targetPosition: {x: 0.597, y: 0.398, z: 1.69}
   _boxCollider: {fileID: 0}
   _capsuleCollider: {fileID: 0}
   _catCollider: {fileID: 0}
+  _animator: {fileID: 0}
   _force: 75
 --- !u!1 &978896459
 GameObject:
@@ -1565,7 +1567,7 @@ GameObject:
   - component: {fileID: 1063245517}
   - component: {fileID: 1063245516}
   m_Layer: 5
-  m_Name: LeaderBoardButton
+  m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1637,7 +1639,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 18235503}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: LoadLeadBoardState
+        m_MethodName: LoadCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1764,9 +1766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Leaderboard
-
-'
+  m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 937c3e6bac2497c4b826163ad7f8c5b7, type: 2}
   m_sharedMaterial: {fileID: 1531934885135198992, guid: 937c3e6bac2497c4b826163ad7f8c5b7,
@@ -2911,7 +2911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1435776927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2942,6 +2942,7 @@ MonoBehaviour:
   _maxNumberOfEvents: 4
   _lifes: 3
   _flies: 0
+  timePlayed: 5
   canAcuraccy: 0
   cansDeployed: 0
   cansEnBasura: 0
@@ -2975,7 +2976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1501909257}
-  - component: {fileID: 1501909256}
+  - component: {fileID: 1501909258}
   m_Layer: 0
   m_Name: LataSpawner
   m_TagString: Untagged
@@ -2983,24 +2984,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1501909256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501909255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1fad5a97a93954f9664fe0da8de4ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _randomizer: 0
-  _lata:
-  - {fileID: 999990461344718401, guid: a9db30156a044d64c979d9fff994a1bb, type: 3}
-  - {fileID: 999990461344718401, guid: 519afea3f2a5cec428d0f12dd442f92d, type: 3}
-  - {fileID: 999990461344718401, guid: 16714eaf9ae90234da5173d09191a22b, type: 3}
-  - {fileID: 999990461344718401, guid: 1ea61aaa3edd1634f8f077813c2c0275, type: 3}
 --- !u!4 &1501909257
 Transform:
   m_ObjectHideFlags: 0
@@ -3016,6 +2999,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1501909258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501909255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8097404c563444c892ad28d9738055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _randomizer: 0
+  _lata:
+  - {fileID: 999990461344718401, guid: a9db30156a044d64c979d9fff994a1bb, type: 3}
 --- !u!64 &1523953995
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3120,7 +3118,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1903552578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 18235503}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: LoadExitApplication
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1903552578
 MonoBehaviour:
   m_ObjectHideFlags: 0
