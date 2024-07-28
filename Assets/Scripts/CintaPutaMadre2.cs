@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CintaPutaMadre2 : MonoBehaviour
+public class CintaPutaMadre : MonoBehaviour
 {
     private Rigidbody _rb;
 
@@ -16,7 +16,7 @@ public class CintaPutaMadre2 : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 pos = _rb.position;
-        _rb.position += Vector3.right * Time.fixedDeltaTime;
+        _rb.position += Vector3.right * GameManager.Instance.LoadingBeltVelocity * Time.fixedDeltaTime;
         _rb.MovePosition(pos);
     }
 }
