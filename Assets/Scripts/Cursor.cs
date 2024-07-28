@@ -12,6 +12,7 @@ public class Cursor : MonoBehaviour
     [SerializeField] private LayerMask _layer;
     private Transform _tr;
     private Vector3 _mousePos;
+    [SerializeField] private AudioManager _audioManager;
 
     [SerializeField] private Vector3 targetPosition;
     private GameObject _can;
@@ -53,6 +54,7 @@ public class Cursor : MonoBehaviour
             }
             else if (obj.GetComponent<Orbit>() != null)
             {
+                _audioManager.KillFly();
                 Debug.Log("moscaaaaa");
                 GameManager.Instance.AddFlies(1);
                 Destroy(obj.transform.parent.gameObject);
