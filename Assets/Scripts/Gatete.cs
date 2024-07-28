@@ -28,11 +28,11 @@ public class Gatete : MonoBehaviour
             other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(0, 50, _force * lado);
             if (lado == 1)
             {
-                GetComponent<SpriteRenderer>().sprite = _delante;
+                _animator.Play("Delante");
             }
             else if (lado == -1)
             {
-                GetComponent<SpriteRenderer>().sprite = _detras;
+                _animator.Play("Detras");
             }
         }
     }
@@ -40,19 +40,12 @@ public class Gatete : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        Enter();
     }
 
-    void Update()
+    public void Enter()
     {
-        if (GetComponent<SpriteRenderer>().sprite == _detras || GetComponent<SpriteRenderer>().sprite == _delante)
-        {
-            if (_timer <= 0)
-            {
-                GetComponent<SpriteRenderer>().sprite = _normal;
-                _timer = 1;
-            }
-            _timer -= Time.deltaTime;
-        }
+        StartCoroutine(GoIn());
     }
 
     public void FlipAndLeave()
@@ -73,19 +66,44 @@ public class Gatete : MonoBehaviour
 
             yield return null;
         }
+
+        StopAllCoroutines();
     }
 
     IEnumerator Position()
     {
-        _animator.Play("Walk");
+        _animator.SetBool("Moving", true);
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z);
+        Vector3 aux = transform.position;
         float timeToStart = Time.deltaTime;
-        while (transform.position.x != transform.position.x - 5)
+        while (transform.position.x > aux.x - 5f)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 5, transform.position.y, transform.position.z), 0.001f * timeToStart);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 5f, transform.position.y, transform.position.z), 0.001f * timeToStart);
             timeToStart += Time.deltaTime;
 
             yield return null;
         }
+        _animator.SetBool("Moving", false);
+        transform.eulerAngles = Vector3.zero; 
+        StopAllCoroutines();
+    }
+
+    IEnumerator GoIn()
+    {
+        _animator.SetBool("Moving", true);
+        Vector3 aux = transform.position;
+        float timeToStart = Time.deltaTime;
+        while (transform.position.x < aux.x + 5f)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x + 5f, transform.position.y, transform.position.z), 0.001f * timeToStart);
+            timeToStart += Time.deltaTime;
+
+            yield return null;
+        }
+
+        _animator.SetBool("Moving", false);
+        transform.position = new Vector3(transform.position.x, transform.position.y - 0.4f, transform.position.z);
+
+        StopAllCoroutines();
     }
 }
