@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeaderBoardScene.unity
     guid: de4fd69ff75f41b41aa0689349e07f20
+  - enabled: 1
+    path: Assets/Scenes/QuechuScene.unity
+    guid: a473e08fc8354f6469bed83d3d46b7bd
   m_configObjects: {}

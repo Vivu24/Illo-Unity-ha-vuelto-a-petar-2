@@ -41,10 +41,14 @@ public class LataManager : MonoBehaviour
 
     void LataCreator()
     {
-        int colorRandom = Random.Range(0, 5);
+        int colorRandom = Random.Range(0, 4);
 
         Instantiate(_lata[colorRandom], _tr).transform.position = new Vector3(_tr.position.x, _tr.position.y, _tr.position.z + _randomizer);
         
+        if(colorRandom ==0 || colorRandom ==1)
+        {
+            GameManager.Instance.cansDeployed++;
+        }
         
     }
 }
