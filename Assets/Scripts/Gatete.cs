@@ -45,6 +45,8 @@ public class Gatete : MonoBehaviour
     public void FlipAndLeave()
     {
         StartCoroutine(Rotation());
+
+        StartCoroutine(Position());
     }
 
     IEnumerator Rotation()
@@ -59,8 +61,6 @@ public class Gatete : MonoBehaviour
 
             yield return null;
         }
-
-        StartCoroutine(Position());
     }
 
     IEnumerator Position()
