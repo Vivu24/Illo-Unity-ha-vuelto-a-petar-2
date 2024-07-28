@@ -26,7 +26,7 @@ public class LataManager : MonoBehaviour
     {
         if (_timer <= 0)
         {
-            _randomizer = Random.Range(-0.5f, 0.5f);
+            _randomizer = Random.Range(-0.35f, 0.35f);
             //Vector3 aux3D = new Vector3(_tr.position.x, _tr.position.y, _tr.position.z + _randomizer);
             //Transform auxTr = _tr;
             //auxTr.position = aux3D;
