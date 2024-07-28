@@ -17,6 +17,8 @@ public class Gatete : MonoBehaviour
 
     private float _timeCount = 0.0f;
 
+    private Animator _animator;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 6)
@@ -35,6 +37,11 @@ public class Gatete : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         if (GetComponent<SpriteRenderer>().sprite == _detras || GetComponent<SpriteRenderer>().sprite == _delante)
@@ -50,11 +57,35 @@ public class Gatete : MonoBehaviour
 
     public void FlipAndLeave()
     {
-        Quaternion dest = new Quaternion(transform.rotation.x,
-                                        transform.rotation.y + 180,
-                                        transform.rotation.z,
-                                        transform.rotation.w);
+        StartCoroutine(Rotation());
+        StartCoroutine(Position());
+    }
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, dest, 1f);
+    IEnumerator Rotation()
+    {
+        float timeToStart = Time.deltaTime;
+        while (transform.rotation.y != transform.rotation.y + 180) // This is your target size of object.
+        {
+            //float tempTime = Mathf.Lerp(2, 0.1f, (Time.time - timeToStart) * 0.001f);//Here speed is the 1 or any number which decides the how fast it reach to one to other end.
+            //transform.rotation = new Quaternion(transform.rotation.x, tempTime, transform.rotation.z, transform.rotation.w);
+            transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z, transform.rotation.w), 0.001f * timeToStart);
+            timeToStart += Time.deltaTime;
+
+            yield return null;
+        }
+    }
+
+    IEnumerator Position()
+    {
+        _animator.Play("Walk");
+        transform.position = new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z);
+        float timeToStart = Time.deltaTime;
+        while (transform.position.x != transform.position.x - 5)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 5, transform.position.y, transform.position.z), 0.001f * timeToStart);
+            timeToStart += Time.deltaTime;
+
+            yield return null;
+        }
     }
 }
