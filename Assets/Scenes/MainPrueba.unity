@@ -888,6 +888,9 @@ MonoBehaviour:
   _maxNumberOfEvents: 4
   _lifes: 3
   _flies: 0
+  canAcuraccy: 0
+  cansDeployed: 0
+  cansEnBasura: 0
   catActive: 0
   bossActive: 0
   bostezo:
@@ -1761,7 +1764,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2866,6 +2871,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7126804242827430130, guid: cac153a04356f7e4fb72bc6e6a8dde83,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pared
+      objectReference: {fileID: 0}
     - target: {fileID: 7356990884384065353, guid: cac153a04356f7e4fb72bc6e6a8dde83,
         type: 3}
       propertyPath: m_Layer
@@ -3582,7 +3592,8 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 2.5934117
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6471335442056296348, guid: 868e042a8a69a2b45ade26c622644fd1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
