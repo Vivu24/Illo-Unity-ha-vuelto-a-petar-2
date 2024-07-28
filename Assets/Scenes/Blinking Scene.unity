@@ -522,9 +522,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caffeine: 100
   animator: {fileID: 1536527284}
-  decreasecaffeine: 1
+  decreasecaffeine: 4
   secondsToDecrease: 5
-  blinkTimeMultiplier: 3
+  timeToIncreaseDecreaseCaffeine: 40
+  MaxDecreaseCaffeine: 8
 --- !u!1 &2126536568
 GameObject:
   m_ObjectHideFlags: 0
