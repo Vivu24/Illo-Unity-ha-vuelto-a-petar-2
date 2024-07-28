@@ -35,6 +35,11 @@ public class Leader2000 : MonoBehaviour
         }));
     }
 
+    public void disableButton(GameObject boton)
+    {
+        boton.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

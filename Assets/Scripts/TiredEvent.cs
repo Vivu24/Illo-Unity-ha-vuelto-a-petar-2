@@ -10,7 +10,6 @@ public class TiredEvent : MonoBehaviour
     public int secondsToDecrease = 5;
     public float timeToIncreaseDecreaseCaffeine = 40;
     public int MaxDecreaseCaffeine = 8;
-    GameManager manager = GameManager.Instance;
         
         // Start is called before the first frame update
     void Start()
@@ -43,7 +42,7 @@ public class TiredEvent : MonoBehaviour
         caffeine -= decreasecaffeine;
         if (caffeine <= 0 && !animator.GetBool("sleep"))
         {
-            if (manager.Lifes != 0) manager.LoseLife();
+            if (GameManager.Instance.Lifes != 0) GameManager.Instance.PlayerDies();
         }
         else if (caffeine <= 20 && !animator.GetBool("sleep"))
         {
