@@ -69,12 +69,21 @@ public class GameManager : MonoBehaviour
 
     // FLY COUNTER //
     [SerializeField]
-    private int _flies;
-    private float timePlayed;
+    public int _flies = 0;
+    public float timePlayed = 5f;
     public float canAcuraccy;
-    public float cansDeployed;
+    public float cansDeployed = 5f;
     public float cansEnBasura;
     public int Flies { get { return _flies; } }
+    public int getFlies()
+    {
+        return _flies;
+    }
+    public float getTime()
+    {
+        Debug.Log("Mitiempo es: " + timePlayed);
+        return timePlayed;
+    }
 
     public bool catActive = false;
     public bool bossActive = false;
@@ -93,6 +102,7 @@ public class GameManager : MonoBehaviour
         if (_instance == null) _instance = this;
         else Destroy(this);
         startTime = Time.time;
+        DontDestroyOnLoad(this);
     }
 
 
