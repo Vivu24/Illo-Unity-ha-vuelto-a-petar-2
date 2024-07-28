@@ -23,6 +23,7 @@ public class Cursor : MonoBehaviour
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private CapsuleCollider _capsuleCollider;
     [SerializeField] private BoxCollider _catCollider;
+    [SerializeField] private Animator _animator;
 
     [SerializeField] private float _force;
 
@@ -56,7 +57,7 @@ public class Cursor : MonoBehaviour
             {
                 _audioManager.KillFly();
                 Debug.Log("moscaaaaa");
-                GameManager.Instance.AddFlies(1);
+                _animator.Play("Subir");
                 Destroy(obj.transform.parent.gameObject);
             }
             else if (obj.tag == "Lata" && !isMoving && !tieneLata)
