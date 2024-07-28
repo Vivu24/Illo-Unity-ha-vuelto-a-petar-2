@@ -17,12 +17,17 @@ public class EventoJefe : MonoBehaviour
     public float tiempo = 0f;
     private float contadorEspera = 0f;
 
+    [SerializeField] private AudioClip[] _audios;
+    private AudioSource _audioSource;
+    private bool _talking = false;
+
     void Start()
     {
        p1pos = punto1.transform.position;
         posicionInicial = p1pos;
        
         posicionObjetivo = posicionInicial + Vector3.right * distancia;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -37,10 +42,14 @@ public class EventoJefe : MonoBehaviour
 
             if (transform.position == posicionObjetivo)
             {
-                
+                if (!_talking)
+                {
+                    ChooseAudio();
+                }
+
                 if (contadorEspera <= 0f)
                 {
-                    contadorEspera = tiempoEspera;
+                    contadorEspera = _audioSource.clip.length;
                 }
                 else
                 {
@@ -52,6 +61,7 @@ public class EventoJefe : MonoBehaviour
                         
                         tiempo = 0f; 
                         volviendo = true;
+                        _talking = false;
                     }
                 }
             }
@@ -74,9 +84,12 @@ public class EventoJefe : MonoBehaviour
         }
     }
 
-    private void ChooseBoss()
+    private void ChooseAudio()
     {
-       
+        int rnd = Random.Range(0, 5);
+        _audioSource.clip = _audios[rnd];
+        _audioSource.Play();
+        _talking = true;
     }
 
 }
