@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField]
+    public Animator panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +19,17 @@ public class MenuManager : MonoBehaviour
     {
         
     }
+    IEnumerator Fade()
+    {
+        panel.SetTrigger("fade");
+        Debug.Log("holi");
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MainPrueba");
 
+    }
     public void LoadPlayState()
     {
-        SceneManager.LoadScene("MainPrueba");
+        StartCoroutine(Fade());        
     }
 
     public void LoadLeadBoardState()
