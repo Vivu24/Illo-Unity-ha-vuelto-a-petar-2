@@ -47,7 +47,11 @@ public class MenuManager : MonoBehaviour
         _hide = true;
         SceneManager.LoadScene("LeaderBoardScene");
     }
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Creditos");
 
+    }
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MenuFinal");
