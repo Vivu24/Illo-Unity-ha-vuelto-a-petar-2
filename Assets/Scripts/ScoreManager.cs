@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        score = GameManager.Instance.Score;
+        //score = GameManager.Instance.Score;
     }
 
     // Update is called once per frame
