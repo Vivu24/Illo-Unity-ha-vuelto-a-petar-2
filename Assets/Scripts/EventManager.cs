@@ -25,7 +25,7 @@ public class EventManager : MonoBehaviour
     public void ChangeEvent(int n)
     {
         numOfEvent = n;
-        switch (2)
+        switch (numOfEvent)
         {
             case 1:
                 MoscaEvent();
