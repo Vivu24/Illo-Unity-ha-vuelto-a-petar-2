@@ -92,8 +92,6 @@ public class Cursor : MonoBehaviour
                 lataEnMano = _can;
             }
         }
-
-        Debug.Log("tengo lata: " + tieneLata);
     }
 
     private void takeCan(GameObject can)
