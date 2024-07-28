@@ -50,7 +50,8 @@ public class MenuManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MenuPrueba");
+        SceneManager.LoadScene("MenuFinal");
+        Destroy(GameManager.Instance.gameObject);
 
     }
 
