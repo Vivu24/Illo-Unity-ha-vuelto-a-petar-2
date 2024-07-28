@@ -34,6 +34,12 @@ public class Producto : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.GetComponent<Producto>() == null || 
+            collision.gameObject.GetComponent<CintaPutaMadre>() == null)
+        {
+            gameObject.GetComponent<AudioSource>().volume = 0.3f;
+            gameObject.GetComponent<AudioSource>().pitch = 0.25f;
+            gameObject.GetComponent<AudioSource>().Play();
+        }
     }
 }
