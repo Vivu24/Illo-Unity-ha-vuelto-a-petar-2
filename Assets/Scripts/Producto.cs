@@ -31,4 +31,9 @@ public class Producto : MonoBehaviour
     {
         _color = color;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }

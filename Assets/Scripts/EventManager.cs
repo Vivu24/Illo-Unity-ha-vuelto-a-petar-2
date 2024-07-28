@@ -46,6 +46,7 @@ public class EventManager : MonoBehaviour
     private void MoscaEvent()
     {
         Instantiate(_mosca, _flyTr);
+        Debug.Log("MOSCA");
     }
 
     private void GatitoEvent()
