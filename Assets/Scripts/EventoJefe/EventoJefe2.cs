@@ -64,7 +64,7 @@ public class EventoJefe2 : MonoBehaviour
                         tiempo = 0f;
                         volviendo = true;
                         _talking = false;
-                        GameManager.Instance.bossActive = false;
+                        GameManager.Instance.boss2Active = false;
                     }
                 }
             }

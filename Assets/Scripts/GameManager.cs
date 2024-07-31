@@ -86,7 +86,10 @@ public class GameManager : MonoBehaviour
     }
 
     public bool catActive = false;
-    public bool bossActive = false;
+    public bool boss1Active = false;
+    public bool boss2Active = false;
+    public bool boss3Active = false;
+
 
     [SerializeField]
     public AudioClip[] bostezo;

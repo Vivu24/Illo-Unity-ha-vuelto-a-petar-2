@@ -62,7 +62,7 @@ public class EventoJefe : MonoBehaviour
                         tiempo = 0f; 
                         volviendo = true;
                         _talking = false;
-                        GameManager.Instance.bossActive = false;
+                        GameManager.Instance.boss1Active = false;
                     }
                 }
             }
@@ -87,7 +87,7 @@ public class EventoJefe : MonoBehaviour
 
     private void ChooseAudio()
     {
-        int rnd = Random.Range(0, 5);
+        int rnd = Random.Range(0, _audios.Length);
         _audioSource.clip = _audios[rnd];
         _audioSource.Play();
         _talking = true;
