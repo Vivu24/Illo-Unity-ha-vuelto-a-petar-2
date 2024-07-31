@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 
+
 public class Cursor : MonoBehaviour
 {
     private Camera _cam;
@@ -143,8 +144,8 @@ public class Cursor : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
 
         //aplico fuerza a la lata, en la direccion donde ha colisionado el rayo
-        float forceMult = Vector3.Distance(lataEnMano.transform.position, target);
-        rb.AddForce((target - lataEnMano.transform.position).normalized * _force * forceMult, ForceMode.Impulse);
+        float forceMult = Mathf.Min(Vector3.Distance(lataEnMano.transform.position, target) * _force, 130.0f);
+        rb.AddForce((target - lataEnMano.transform.position).normalized * forceMult, ForceMode.Impulse);
 
        _boxCollider.enabled = true;
         //_capsuleCollider.enabled = true;
