@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
     // FLY COUNTER //
     [SerializeField]
     public int _flies = 0;
+    private bool tutorialDone = false;
     public float timePlayed = 5f;
     public float canAcuraccy;
     public float cansDeployed = 5f;
@@ -110,7 +111,11 @@ public class GameManager : MonoBehaviour
 
 
     #region METHODS
-    
+    public void Tutorial()
+    {
+
+    }
+
     public void LoseLife()
     {
         Camera.main.GetComponent<Shake>().start = true;
@@ -137,7 +142,7 @@ public class GameManager : MonoBehaviour
 
     public void EventUpdate()
     {
-        if(_lifes > 0)
+        if(_lifes > 0 && tutorialDone==true)
         {
             _eventTimer += Time.deltaTime;
             if (_eventTimer > _eventMaxCooldown)
