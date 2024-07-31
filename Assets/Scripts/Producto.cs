@@ -7,6 +7,15 @@ public class Producto : MonoBehaviour
     [SerializeField] private bool _isCan;
     [SerializeField] private bool _isUsed;
     [SerializeField] private int _color;
+    public bool canBeTaken = true, canBeTakenCR_running = true;
+
+    public void Update()
+    {
+        if (!canBeTaken && canBeTakenCR_running)
+        {
+            StartCoroutine(takeAgainCD(1.5f));
+        }
+    }
 
     public bool isCan()
     {
@@ -30,6 +39,14 @@ public class Producto : MonoBehaviour
     public void setColor(int color)
     {
         _color = color;
+    }
+
+    private IEnumerator takeAgainCD(float time)
+    {
+        canBeTakenCR_running = false;
+        yield return new WaitForSeconds(time);
+        canBeTaken = true;
+        canBeTakenCR_running = true;
     }
 
     //private void OnCollisionEnter(Collision collision)

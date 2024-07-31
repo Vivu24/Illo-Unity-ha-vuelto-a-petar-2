@@ -1348,11 +1348,12 @@ MonoBehaviour:
     m_Bits: 8
   _audioManager: {fileID: 0}
   targetPosition: {x: 0.597, y: 0.398, z: 1.69}
+  takeVelocity: 5
   _boxCollider: {fileID: 0}
   _capsuleCollider: {fileID: 0}
   _catCollider: {fileID: 0}
   _animator: {fileID: 0}
-  _force: 75
+  _force: 30
 --- !u!1 &978896459
 GameObject:
   m_ObjectHideFlags: 0

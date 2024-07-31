@@ -18,6 +18,7 @@ public class Cursor : MonoBehaviour
     private GameObject lataEnMano;
     private bool isMoving = false;
     private bool tieneLata = false;
+    [SerializeField] private float takeVelocity = 5.0f;
 
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private CapsuleCollider _capsuleCollider;
@@ -88,7 +89,7 @@ public class Cursor : MonoBehaviour
 
         if (isMoving)
         {
-            _can.transform.position = Vector3.Lerp(_can.transform.position, targetPosition, Time.deltaTime * 5.0f);
+            _can.transform.position = Vector3.Lerp(_can.transform.position, targetPosition, Time.deltaTime * takeVelocity);
             if (Vector3.Distance(_can.transform.position, targetPosition) < 0.01f)
             {
                 _can.transform.position = targetPosition;
@@ -101,21 +102,26 @@ public class Cursor : MonoBehaviour
 
     private void takeCan(GameObject can)
     {
-        _can = can;
+       if (can.GetComponent<Producto>().canBeTaken)
+       {
+            _can = can;
+            
 
-        Rigidbody rb = _can.GetComponent<Rigidbody>();
-        rb.useGravity = false;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+            Rigidbody rb = _can.GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
 
-        _boxCollider = rb.GetComponent<BoxCollider>();
-        _boxCollider.enabled = false;  
-        _capsuleCollider = rb.GetComponent<CapsuleCollider>();
-        _capsuleCollider.enabled = false;
+            _boxCollider = rb.GetComponent<BoxCollider>();
+            _boxCollider.enabled = false;  
+            _capsuleCollider = rb.GetComponent<CapsuleCollider>();
+            _capsuleCollider.enabled = false;
         
 
-        lataEnMano = _can;
-        isMoving = true;
+            lataEnMano = _can;
+            tieneLata = true;
+            isMoving = true;
+        }
     }
 
     private void drinkRedbull(GameObject can)
@@ -137,12 +143,15 @@ public class Cursor : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
 
         //aplico fuerza a la lata, en la direccion donde ha colisionado el rayo
-        rb.AddForce((target - lataEnMano.transform.position).normalized * _force, ForceMode.Impulse);
+        float forceMult = Vector3.Distance(lataEnMano.transform.position, target);
+        rb.AddForce((target - lataEnMano.transform.position).normalized * _force * forceMult, ForceMode.Impulse);
 
        _boxCollider.enabled = true;
         //_capsuleCollider.enabled = true;
 
+        lataEnMano.GetComponent<Producto>().canBeTaken = false;
         tieneLata = false;
+        isMoving = false;
         if (lataEnMano.GetComponent<Producto>().isUsed())
         {
             GameManager.Instance.spawnRedbull();

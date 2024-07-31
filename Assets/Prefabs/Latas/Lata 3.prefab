@@ -82,6 +82,8 @@ MonoBehaviour:
   _isCan: 1
   _isUsed: 0
   _color: 3
+  canBeTaken: 1
+  canBeTakenCR_running: 1
 --- !u!54 &5747659202553710289
 Rigidbody:
   m_ObjectHideFlags: 0

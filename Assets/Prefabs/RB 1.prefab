@@ -332,6 +332,8 @@ MonoBehaviour:
   _isCan: 1
   _isUsed: 0
   _color: 3
+  canBeTaken: 1
+  canBeTakenCR_running: 1
 --- !u!82 &6104808911696601842
 AudioSource:
   m_ObjectHideFlags: 0
