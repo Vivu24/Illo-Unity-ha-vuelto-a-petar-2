@@ -37,6 +37,7 @@ public class EventManager : MonoBehaviour
                     GatitoEvent();
                     break;
                 case 3:
+                    Debug.Log("JEFE");
                     JefeEvent();
                     break;
                 case 4:
@@ -69,15 +70,7 @@ public class EventManager : MonoBehaviour
 
     private void JefeEvent()
     {
-        if (!GameManager.Instance.bossActive)
-        {
-            GameManager.Instance.bossActive = true;
             RndInitialPoint();
-        }
-        else
-        {
-            ChangeEvent(Random.Range(1, 5));
-        }
     }
 
     private void LuzEvent()
@@ -129,7 +122,7 @@ public class EventManager : MonoBehaviour
     }
 
 
-    private void RndInitialPoint()
+    private void RndInitialPoint0()
     {
         int rnd = Random.Range(0, 7);
         if (rnd == 0)
@@ -169,5 +162,28 @@ public class EventManager : MonoBehaviour
 
     }
 
+    private void RndInitialPoint()
+    {
+        bool activated = false;
 
+        while (!activated)
+        {
+            int rnd = Random.Range(0, 3);
+            if (rnd == 0 && GameManager.Instance.boss1Active == false)
+            {
+                ActiveJefe1();
+                activated = true;
+            }
+            else if (rnd == 1 && GameManager.Instance.boss2Active == false)
+            {
+                ActiveJefe2();
+                activated = true;
+            }
+            else if (rnd == 2 && GameManager.Instance.boss3Active == false)
+            {
+                ActiveJefe3();
+                activated = true;
+            }
+        }
+    }
 }
