@@ -54,7 +54,7 @@ public class Cursor : MonoBehaviour
             {
                 obj.GetComponent<LightController>().TurnOn();
             }
-            else if (obj.GetComponent<Orbit>() != null)
+            else if (obj.tag == "Mosca")
             {
                 _audioManager.KillFly();
                 Debug.Log("moscaaaaa");

@@ -34,14 +34,14 @@ public class EventManager : MonoBehaviour
                     MoscaEvent();
                     break;
                 case 2:
-                    GatitoEvent();
+                    MoscaEvent();
                     break;
                 case 3:
                     Debug.Log("JEFE");
-                    JefeEvent();
+                    MoscaEvent();
                     break;
                 case 4:
-                    LuzEvent();
+                    MoscaEvent();
                     break;
 
             }
